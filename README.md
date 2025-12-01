@@ -7,15 +7,20 @@ Simple username assignment for hands-on labs with downloadable instructions.
 ### Setup (Admin)
 1. Deploy app to Cloudera AI
 2. Visit: `https://your-app-url.cdsw.io/admin`
-3. Set max users (e.g., 150) and save
+3. Configure lab settings:
+   - Lab name (e.g., "AI Workshop 2024")
+   - Max users (e.g., 150)
+   - **Password** (shared by all users)
+   - **Lab URL** (link for users to access the lab)
 4. Upload `lab-readme.pdf` to `/home/cdsw/`
-5. Share URL with participants
+5. Share portal URL with participants
 
 ### User Experience
 1. Visit `https://your-app-url.cdsw.io`
 2. Download PDF instructions (optional)
 3. Enter email → get username (user001, user002, etc.)
-4. Same email → same username (no duplicates)
+4. **View assigned username, password, and lab URL**
+5. Same email → same username (no duplicates, credentials redisplayed)
 
 ## 📦 Deployment to Cloudera AI
 
@@ -61,9 +66,11 @@ Users visit: `https://[subdomain].ml-xxxxx.cdsw.io`
 **Access:** `https://your-app-url.cdsw.io/admin`
 
 **Features:**
-- Configure max users
+- Configure lab name and max users
+- **Set shared password for all users**
+- **Set lab URL for all users**
 - View real-time assignments
-- See email-to-username mappings  
+- See email-to-username mappings
 - Reset everything for next lab
 
 ## 💾 Data Storage
@@ -74,7 +81,9 @@ Auto-created JSON files:
 ```json
 {
   "max_users": 150,
-  "lab_name": "AI Workshop"
+  "lab_name": "AI Workshop",
+  "password": "Lab2024!",
+  "url": "https://lab.example.com"
 }
 ```
 
@@ -108,12 +117,18 @@ Auto-created JSON files:
 
 **New User:**
 ```
-Downloads PDF → Enters email → Gets: "You are: user001"
+Downloads PDF → Enters email → Gets:
+  - Username: user001
+  - Password: Lab2024!
+  - Lab URL: https://lab.example.com (clickable link)
 ```
 
 **Returning User:**
 ```
 Enters email → "You already have a username: user001"
+  - Username: user001 (same as before)
+  - Password: Lab2024!
+  - Lab URL: https://lab.example.com
 ```
 
 **Lab Full:**
