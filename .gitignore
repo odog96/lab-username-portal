@@ -1,0 +1,9 @@
+R
+node_modules
+*.pyc
+__pycache__
+.*
+!.gitignore
+!.experiments
+lab_config.json
+lab_assignments.json
